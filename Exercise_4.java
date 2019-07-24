@@ -33,8 +33,7 @@ public class GFG {
     static void insert(Node temp, int key) 
     { 
 
-        // Do level order traversal until we find 
-        // an empty place and add the node.  
+         temp.left = new Node(key);
     } 
        
     // Driver code 
