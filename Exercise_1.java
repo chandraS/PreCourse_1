@@ -1,31 +1,63 @@
+import java.io.*;
 class Stack { 
     static final int MAX = 1000; 
     int top; 
     int a[] = new int[MAX]; // Maximum size of Stack 
   
-    boolean isEmpty() 
-    { 
-        //Write your code here 
-    } 
+    boolean isEmpty()
+    {
+      if(top < 0)
+        return true;
+      else
+        return false;
+    }
 
     Stack() 
     { 
-        //Initialize your constructor 
+        top = -1; 
     } 
   
     boolean push(int x) 
     { 
-        //Write your code here
+        if(top > MAX)
+        {
+          System.out.println("Stack is full");
+          return false;
+        }
+        else
+          {
+            a[++top] = x;
+            return true;
+          }
     } 
   
     int pop() 
     { 
-        //Write your code here
+        if(top < 0)
+        {
+          System.out.println("Stack is empty");
+          return 0;
+        }
+          else
+        {
+          int x= a[top--];
+          return x;
+        }
     } 
   
     int peek() 
     { 
-        //Write your code here
+      if(top < 0)
+        {
+          System.out.println("Stack is empty");
+          return 0;
+        }
+          else
+        {
+          int x= a[top];
+          return x;
+        }
+        
     } 
 } 
   
